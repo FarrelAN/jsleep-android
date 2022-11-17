@@ -10,13 +10,11 @@ import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        TextView register = findViewById(R.id.textView2);
+        TextView register = findViewById(R.id.textView3);
         Button mainActivity = findViewById(R.id.button);
         register.setOnClickListener(new View.OnClickListener(){
             @Override
