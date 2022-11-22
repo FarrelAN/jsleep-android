@@ -34,9 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         Button mainActivity = findViewById(R.id.button);
         username = findViewById(R.id.editTextTextEmailAddress);
         password = findViewById(R.id.editTextTextPassword);
-        register.setOnClickListener(new View.OnClickListener(){
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (View view){
+            public void onClick(View view) {
                 Intent move = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(move);
             }
@@ -45,32 +45,59 @@ public class LoginActivity extends AppCompatActivity {
         mainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Account account = requestAccount();
-                Intent move = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(move);
+                // Account account = requestAccount();
+                Account account = requestLogin();
+                //  Intent move = new Intent(LoginActivity.this, MainActivity.class);
+                //   startActivity(move);
             }
         });
 
     }
 
-    protected Account requestAccount(){
-        mApiService.getAccount(0).enqueue(new Callback<Account>(){
+    protected Account requestAccount() {
+        mApiService.getAccount(0).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     Account account;
                     account = response.body();
-                    System. out. println(account.toString());
+                    System.out.println(account.toString());
+                    System.out.println("tes");
                 }
-                System. out. println("tes");
+
             }
 
             @Override
-            public void onFailure(Call<Account> call, Throwable t){
-                Toast.makeText(mContext,"no Account id=0",Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<Account> call, Throwable t) {
+                Toast.makeText(mContext, "no Account id=0", Toast.LENGTH_SHORT).show();
             }
         });
         return null;
     }
 
+    protected Account requestLogin() {
+        mApiService.login(username.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
+            @Override
+            public void onResponse(Call<Account> call, Response<Account> response) {
+                if (response.isSuccessful()) {
+
+                    MainActivity.cookies = response.body();
+                    Intent go = new Intent(LoginActivity.this, MainActivity.class);
+
+                    startActivity(go);
+                    Toast.makeText(mContext, "Login Successfull", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Account> call, Throwable t) {
+                System.out.println(t.toString());
+
+                Toast.makeText(mContext, "invalid email or password",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return null;
+    }
 }

@@ -19,6 +19,7 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static Account cookies;
     String name;
     static ArrayList<Room> roomList = new ArrayList<Room>();
 
