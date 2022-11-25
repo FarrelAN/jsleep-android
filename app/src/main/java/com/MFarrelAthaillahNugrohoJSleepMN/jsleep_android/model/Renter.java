@@ -1,8 +1,5 @@
 package com.MFarrelAthaillahNugrohoJSleepMN.jsleep_android.model;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * Ini adalah class Renter
  * @author M. Farrel Athaillah Nugroho

@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Serializable {
 
-    int id;
+    public int id;
     public Serializable(int id) {
         this.id = id;
     }

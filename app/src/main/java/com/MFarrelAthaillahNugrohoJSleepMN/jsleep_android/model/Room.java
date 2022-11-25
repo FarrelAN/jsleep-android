@@ -1,8 +1,5 @@
 package com.MFarrelAthaillahNugrohoJSleepMN.jsleep_android.model;
 
-import com.MFarrelAthaillahNugrohoJSleepMN.jsleep_android.model.City;
-import com.MFarrelAthaillahNugrohoJSleepMN.jsleep_android.model.Facility;
-import com.MFarrelAthaillahNugrohoJSleepMN.jsleep_android.model.Price;
 import java.util.ArrayList;
 import java.util.Date;
 

@@ -47,6 +47,4 @@ public interface BaseApiService {
                            @Query("facility") Facility facility,
                            @Query("city") City city,
                            @Query("address") String address);
-
-
 }
