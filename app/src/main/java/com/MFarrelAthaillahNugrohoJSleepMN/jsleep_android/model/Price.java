@@ -1,9 +1,5 @@
 package com.MFarrelAthaillahNugrohoJSleepMN.jsleep_android.model;
-/**
- * Ini adalah class Price
- * @author M. Farrel Athaillah Nugroho
- * @version Modul 8
- */
+
 public class Price{
     public double price;
     public double discount;

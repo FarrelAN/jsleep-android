@@ -8,17 +8,33 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="collapseActionView|always"/>
 
+    <item android:id="@+id/refresh_button"
+        android:icon="@drawable/ic_baseline_loop_24"
+        android:title="Refresh Button"
+        app:actionViewClass="androidx.appcompat.widget.AppCompatTextView"
+        app:showAsAction="collapseActionView|always"/>
+
+    <item android:id="@+id/add_button"
+        android:icon="@drawable/ic_baseline_add_home_24"
+        android:title="Add Button"
+        app:actionViewClass="androidx.appcompat.widget.AppCompatTextView"
+        app:showAsAction="collapseActionView|always"/>
+
     <item android:id="@+id/account_button"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Account Button"
         app:actionViewClass="androidx.appcompat.widget.AppCompatImageView"
         app:showAsAction="collapseActionView|always"/>
 
-    <item android:id="@+id/add_button"
-        android:icon="@drawable/ic_baseline_add_box_24"
-        android:title="Add Button"
-        app:actionViewClass="androidx.appcompat.widget.AppCompatTextView"
+    <item android:id="@+id/home_button"
+        android:icon="@drawable/ic_round_home_24"
+        android:title="home Button"
+        app:actionViewClass="androidx.appcompat.widget.AppCompatImageView"
         app:showAsAction="collapseActionView|always"/>
+
+
+
+
 
 
 </menu>

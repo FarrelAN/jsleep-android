@@ -4,6 +4,327 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     tools:context=".DetailRoomActivity">
+
+
+    <Button
+        android:id="@+id/booking_button"
+        android:layout_width="161dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="72dp"
+        android:backgroundTint="@color/blue3"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Book Now"
+        android:textColor="@color/white"
+        android:textColorHint="@color/bg"
+        android:textColorLink="@color/bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currency_price"
+        app:layout_constraintVertical_bias="0.703" />
+
+    <LinearLayout
+        android:id="@+id/linearlayoutcheck1"
+        android:layout_width="204dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_facilities">
+
+        <CheckBox
+            android:id="@+id/detailcheck_wifi"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginStart="50dp"
+            android:backgroundTint="@color/Porsche"
+            android:buttonTint="@color/lightporsche"
+            android:checked="true"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center_vertical"
+            android:text="Wifi"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/Porsche"
+            android:textColorLink="@color/Porsche" />
+
+        <CheckBox
+            android:id="@+id/detailcheck_bathtub"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginStart="50dp"
+            android:backgroundTint="@color/Porsche"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center_vertical"
+            android:text="Bathtub"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+
+        <CheckBox
+            android:id="@+id/detailcheck_ac"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="50dp"
+            android:backgroundTint="@color/Porsche"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:text="Air Conditioner"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+
+        <CheckBox
+            android:id="@+id/detailcheck_fridge"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="50dp"
+            android:backgroundTint="@color/Porsche"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:text="Refrigerator"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayoutcheck2"
+        android:layout_width="202dp"
+        android:layout_height="145dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/linearlayoutcheck1"
+        app:layout_constraintTop_toTopOf="@+id/linearlayoutcheck1">
+
+        <CheckBox
+            android:id="@+id/detailcheck_balcony"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:backgroundTint="@color/Porsche"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:text="Balcony"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+
+        <CheckBox
+            android:id="@+id/detailcheck_resto"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:backgroundTint="@color/Porsche"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:text="Restaurant"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+
+        <CheckBox
+            android:id="@+id/detailcheck_gym"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:backgroundTint="@color/Porsche"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:text="Fitness Center"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+
+        <CheckBox
+            android:id="@+id/detailcheck_pool"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:backgroundTint="@color/Porsche"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:text="Swimming Pool"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/detailvar_name"
+        android:layout_width="352dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="left"
+        android:text="Room Name"
+        android:textColor="@color/Porsche"
+        android:textSize="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_price"
+        android:layout_width="154dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="48dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="left"
+        android:text="Booking price"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/text_location"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailvar_address" />
+
+    <TextView
+        android:id="@+id/detailvar_address"
+        android:layout_width="257dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="76dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="left"
+        android:text="Address hotel"
+        android:textColor="@color/lightporsche"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_location" />
+
+    <TextView
+        android:id="@+id/text_location"
+        android:layout_width="159dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="left"
+        android:text="Hotel Address"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayoutcheck1" />
+
+    <TextView
+        android:id="@+id/text_facilities"
+        android:layout_width="158dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="left"
+        android:text="Facilities"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_size" />
+
+    <TextView
+        android:id="@+id/detailvar_bedtype"
+        android:layout_width="160dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="28dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="left"
+        android:text="Bed type"
+        android:textColor="@color/lightporsche"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text2_bedtype"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/detailvar_size" />
+
+    <TextView
+        android:id="@+id/text_size"
+        android:layout_width="160dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="17dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="left"
+        android:text="Room size"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text2_bedtype" />
+
+    <TextView
+        android:id="@+id/detailvar_size"
+        android:layout_width="60dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="top"
+        android:text="n"
+        android:textColor="@color/lightporsche"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_size"
+        app:layout_constraintStart_toEndOf="@+id/text_size" />
+
+    <TextView
+        android:id="@+id/detailvar_price"
+        android:layout_width="60dp"
+        android:layout_height="26dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="top"
+        android:text="n"
+        android:textColor="@color/lightporsche"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/detailvar_address"
+        app:layout_constraintTop_toBottomOf="@+id/text_price" />
+
+    <TextView
+        android:id="@+id/currency_price"
+        android:layout_width="52dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="top"
+        android:text="USD"
+        android:textColor="@color/lightporsche"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_price"
+        app:layout_constraintStart_toEndOf="@+id/detailvar_price"
+        app:layout_constraintTop_toTopOf="@+id/detailvar_price" />
+
+    <TextView
+        android:id="@+id/text2_bedtype"
+        android:layout_width="159dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="left"
+        android:text="Room bed type"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/detailvar_bedtype"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/text_size"
+        app:layout_constraintTop_toBottomOf="@+id/detailvar_name" />
+
+    <TextView
+        android:id="@+id/size_unit"
+        android:layout_width="34dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="left"
+        android:text="m\u00B2"
+        android:textColor="@color/lightporsche"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/detailvar_size"
+        app:layout_constraintTop_toTopOf="@+id/detailvar_size" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

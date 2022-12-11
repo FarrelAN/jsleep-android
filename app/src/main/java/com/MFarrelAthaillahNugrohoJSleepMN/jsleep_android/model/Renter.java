@@ -1,10 +1,6 @@
 package com.MFarrelAthaillahNugrohoJSleepMN.jsleep_android.model;
 
-/**
- * Ini adalah class Renter
- * @author M. Farrel Athaillah Nugroho
- * @version Modul 8
- */
+
 public class Renter extends Serializable {
 
     public String username;

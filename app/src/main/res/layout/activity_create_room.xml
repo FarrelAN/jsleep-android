@@ -4,6 +4,347 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateRoomActivity">
+    android:background="@color/bg"
+    tools:context=".CreateRoomActivity"
+    tools:layout_editor_absoluteX="-5dp"
+    tools:layout_editor_absoluteY="-6dp">
+
+
+    <TextView
+        android:id="@+id/rentaroom_text"
+        android:layout_width="350dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center_horizontal"
+        android:text="RentARoom"
+        android:textColor="@color/Porsche"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subtitle_text"
+        android:layout_width="304dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center_horizontal"
+        android:text="Rent out your spare rooms to our fellow sleepers"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rentaroom_text" />
+
+    <Button
+        android:id="@+id/button_cancelcreate"
+        android:layout_width="128dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="@color/blue3"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Cancel"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_createroom"
+        android:layout_width="128dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/blue3"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Create"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_cancelcreate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_cancelcreate"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/text_roomfacil"
+        android:layout_width="149dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Room Facilities"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+        app:layout_constraintVertical_bias="0.222" />
+
+    <Spinner
+        android:id="@+id/spin_city"
+        android:layout_width="180dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/white"
+        android:dropDownWidth="match_parent"
+        android:dropDownSelector="@color/Porsche"
+        app:layout_constraintBottom_toTopOf="@+id/spin_bedtype"
+        app:layout_constraintEnd_toEndOf="@+id/spin_bedtype"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/text_city" />
+
+    <TextView
+        android:id="@+id/text_city"
+        android:layout_width="149dp"
+        android:layout_height="19dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/montserrat"
+        android:text="City"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/text_bedtype"
+        app:layout_constraintEnd_toEndOf="@+id/text_bedtype"
+        app:layout_constraintStart_toStartOf="@+id/text_bedtype"
+        app:layout_constraintTop_toTopOf="@+id/spin_city"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/text_bedtype"
+        android:layout_width="149dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="28dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Bed Type"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/button_createroom"
+        app:layout_constraintEnd_toStartOf="@+id/spin_bedtype"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spin_bedtype"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/spin_bedtype"
+        android:layout_width="180dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/white"
+        android:dropDownWidth="match_parent"
+        android:dropDownSelector="@color/Porsche"
+        app:layout_constraintBottom_toTopOf="@+id/button_cancelcreate"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/text_details"
+        android:layout_width="203dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Room Details"
+        android:textColor="@color/Porsche"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="409dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitle_text">
+
+        <EditText
+            android:id="@+id/detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#80FFFFFF"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_extralight_italic"
+            android:foregroundTint="#80FFFFFF"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHighlight="#80ECB365"
+            android:textColorHint="#80ECB365"
+            android:textColorLink="@color/white" />
+
+        <EditText
+            android:id="@+id/detail_price"
+            android:layout_width="218dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#80FFFFFF"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_extralight_italic"
+            android:foregroundTint="#80FFFFFF"
+            android:hint="Price"
+            android:inputType="numberDecimal"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="#80ECB365"
+            android:textColorLink="#80ECB365" />
+
+        <EditText
+            android:id="@+id/detail_address"
+            android:layout_width="218dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#80FFFFFF"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_extralight_italic"
+            android:foregroundTint="#80FFFFFF"
+            android:hint="Address"
+            android:inputType="textPostalAddress"
+            android:textColorHint="#80ECB365" />
+
+        <EditText
+            android:id="@+id/detail_size"
+            android:layout_width="218dp"
+            android:layout_height="44dp"
+            android:backgroundTint="#80FFFFFF"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_extralight_italic"
+            android:foregroundTint="#80FFFFFF"
+            android:hint="Size"
+            android:inputType="number"
+            android:textColorHint="#80ECB365" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="204dp"
+        android:layout_height="147dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="7dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/text_city"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+        <CheckBox
+            android:id="@+id/check_wifi"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginStart="50dp"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center_vertical"
+            android:text="Wifi"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+
+        <CheckBox
+            android:id="@+id/check_bathtub"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginStart="50dp"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center_vertical"
+            android:text="Bathtub"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+
+        <CheckBox
+            android:id="@+id/check_ac"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="50dp"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:text="Air Conditioner"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+
+        <CheckBox
+            android:id="@+id/check_fridge"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="50dp"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:text="Refrigerator"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="202dp"
+        android:layout_height="145dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout4"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout4">
+
+        <CheckBox
+            android:id="@+id/check_balcony"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:text="Balcony"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+
+        <CheckBox
+            android:id="@+id/check_resto"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:text="Restaurant"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+
+        <CheckBox
+            android:id="@+id/check_gym"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:text="Fitness Center"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+
+        <CheckBox
+            android:id="@+id/check_pool"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:buttonTint="@color/lightporsche"
+            android:fontFamily="@font/montserrat"
+            android:text="Swimming Pool"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

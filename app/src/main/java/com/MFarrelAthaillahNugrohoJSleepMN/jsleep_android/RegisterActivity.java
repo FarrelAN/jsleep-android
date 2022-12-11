@@ -1,5 +1,6 @@
 package com.MFarrelAthaillahNugrohoJSleepMN.jsleep_android;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -26,6 +27,15 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+            @Override
+            public void handleOnBackPressed() {
+                finish();
+                startActivity(getIntent());
+            }
+        };
+
         setContentView(R.layout.activity_register);
         mApiService = UtilsApi.getApiService();
         mContext = this;
@@ -33,7 +43,6 @@ public class RegisterActivity extends AppCompatActivity {
         email = findViewById(R.id.register_email);
         password = findViewById(R.id.register_password);
         Button mainActivity = findViewById(R.id.register_button);
-
         mainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view){
@@ -42,17 +51,21 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+        @Override
+        public void handleOnBackPressed() {
+            finish();
+            startActivity(getIntent());
+        }
+    };
+
     protected Account requestRegister(){
         mApiService.register(name.getText().toString(), email.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if(response.isSuccessful()){
-
                     MainActivity.cookies = response.body();
-
-                    Intent go = new Intent(RegisterActivity.this,
-                            LoginActivity.class);
-
+                    Intent go = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(go);
                     Toast.makeText(mContext, "Register Successful", Toast.LENGTH_SHORT).show();
                 }

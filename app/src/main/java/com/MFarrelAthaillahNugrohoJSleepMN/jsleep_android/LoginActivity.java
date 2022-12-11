@@ -2,6 +2,7 @@ package com.MFarrelAthaillahNugrohoJSleepMN.jsleep_android;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -27,12 +28,24 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+            @Override
+            public void handleOnBackPressed() {
+                finish();
+                startActivity(getIntent());
+            }
+        };
+
         setContentView(R.layout.activity_login);
         mApiService = UtilsApi.getApiService();
         mContext = this;
+
         TextView register = findViewById(R.id.login_register);
+
         email = findViewById(R.id.login_email);
         password = findViewById(R.id.login_pass);
+
         Button mainActivity = findViewById(R.id.login_button);
 
         mainActivity.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +65,15 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+        @Override
+        public void handleOnBackPressed() {
+            finish();
+            startActivity(getIntent());
+        }
+    };
+
+
     protected Account requestAccount(){
         mApiService.getAccount(0).enqueue(new Callback<Account>() {
             @Override
@@ -64,7 +86,6 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(move);
                 }
             }
-
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
                 Toast.makeText(mContext, "no Account id = 0", LENGTH_SHORT).show();
@@ -79,12 +100,11 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if(response.isSuccessful()) {
                     MainActivity.cookies = response.body();
-                    //Intent go = new Intent(LoginActivity.this, MainActivity.class);
-                    //startActivity(go);
+                    Intent go = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(go);
                     Toast.makeText(mContext, "Login Successful", LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
                 System.out.println(t.toString());

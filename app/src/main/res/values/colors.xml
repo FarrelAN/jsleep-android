@@ -3,10 +3,13 @@
     <color name="blue1">#064663</color>
     <color name="blue2">#064663</color>
     <color name="blue3">#064663</color>
+    <color name="Porsche">#ECB365</color>
     <color name="teal_200">#041C32</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="lightporsche">#FFCC85</color>
     <color name="bg">#041C32</color>
+
 
 </resources>
