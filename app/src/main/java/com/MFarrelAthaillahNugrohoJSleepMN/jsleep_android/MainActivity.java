@@ -143,6 +143,11 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                     startActivity(getIntent());
                     return true;
+                case R.id.logout_button:
+                    Intent move4 = new Intent(MainActivity.this, LoginActivity.class);
+                    finish();
+                    startActivity(move4);
+                    return true;
                 default:
                     return super.onOptionsItemSelected(item);
             }
@@ -168,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
                     if (response.isSuccessful()) {
                         temp = response.body();
                         nameList = getName(temp);
-                        ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, nameList);
+                        ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(mContext, R.layout.listview_config, nameList);
                         roomlistview = (ListView) findViewById(R.id.listview);
                         roomlistview.setAdapter(itemAdapter);
                     }

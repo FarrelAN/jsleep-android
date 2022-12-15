@@ -2,6 +2,7 @@ package com.MFarrelAthaillahNugrohoJSleepMN.jsleep_android;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 import java.util.ArrayList;
@@ -119,8 +120,14 @@ public class CreateRoomActivity extends AppCompatActivity {
 
                 int priceInt = priceObj.parseInt(roomPrice.getText().toString());
                 int sizeInt = sizeObj.parseInt(roomSize.getText().toString());
-                //price.price = priceInt;
                 Room room = requestRoom(MainActivity.cookies.id, roomName.getText().toString(), sizeInt, priceInt, facility, city, roomAddress.getText().toString(), bedType);
+            }
+        });
+        cancelCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(CreateRoomActivity.this, MainActivity.class);
+                startActivity(move);
             }
         });
     }
@@ -164,7 +171,7 @@ public class CreateRoomActivity extends AppCompatActivity {
         return true;
     }
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
+
         switch (item.getItemId()) {
             case R.id.home_button:
                 Intent move = new Intent(CreateRoomActivity.this, MainActivity.class);
@@ -183,12 +190,14 @@ public class CreateRoomActivity extends AppCompatActivity {
         MenuItem box = menu.findItem(R.id.add_button);
         MenuItem search = menu.findItem(R.id.search_button);
         MenuItem home = menu.findItem(R.id.home_button);
+        MenuItem logout = menu.findItem(R.id.logout_button);
         register.setVisible(true);
         search.setVisible(false);
         refresh.setVisible(false);
         acc.setVisible(false);
         box.setVisible(false);
         home.setVisible(true);
+        logout.setVisible(false);
         return true;
     }
 }

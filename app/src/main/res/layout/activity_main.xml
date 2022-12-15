@@ -22,13 +22,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prevbutton" />
+        app:layout_constraintTop_toBottomOf="@+id/prevbutton"
+
+        />
 
     <Button
         android:id="@+id/gobutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="1dp"
         android:backgroundTint="@color/blue3"
@@ -36,51 +37,54 @@
         android:text="go"
         app:layout_constraintBottom_toTopOf="@+id/listview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/text_pagenumber" />
+        app:layout_constraintTop_toTopOf="@+id/prevbutton" />
 
     <Button
         android:id="@+id/prevbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="38dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="1dp"
         android:backgroundTint="@color/blue3"
         android:fontFamily="@font/montserrat_bold"
         android:text="Prev"
         app:layout_constraintBottom_toTopOf="@+id/listview"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nextbutton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/nextbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="1dp"
         android:backgroundTint="@color/blue3"
         android:fontFamily="@font/montserrat_bold"
         android:text="next"
         app:layout_constraintBottom_toTopOf="@+id/listview"
-        app:layout_constraintStart_toEndOf="@+id/prevbutton" />
+        app:layout_constraintEnd_toStartOf="@+id/text_pagenumber"
+        app:layout_constraintTop_toTopOf="@+id/prevbutton"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/text_pagenumber"
         android:layout_width="56dp"
         android:layout_height="48dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:inputType="none"
         android:fontFamily="@font/montserrat_bold"
         android:gravity="center_horizontal"
+        android:inputType="none"
         android:text="1"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/listview"
-        app:layout_constraintStart_toEndOf="@+id/nextbutton" />
-
+        app:layout_constraintEnd_toStartOf="@+id/gobutton"
+        app:layout_constraintTop_toTopOf="@+id/prevbutton"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

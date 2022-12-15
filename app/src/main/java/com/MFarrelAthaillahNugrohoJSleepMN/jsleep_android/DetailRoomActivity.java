@@ -121,12 +121,14 @@ public class DetailRoomActivity extends AppCompatActivity {
         MenuItem box = menu.findItem(R.id.add_button);
         MenuItem search = menu.findItem(R.id.search_button);
         MenuItem home = menu.findItem(R.id.home_button);
+        MenuItem logout = menu.findItem(R.id.logout_button);
         register.setVisible(true);
         search.setVisible(false);
         refresh.setVisible(false);
         acc.setVisible(false);
         box.setVisible(false);
         home.setVisible(true);
+        logout.setVisible(false);
         return true;
     }
 

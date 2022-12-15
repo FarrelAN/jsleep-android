@@ -100,7 +100,7 @@ public class AboutMe extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             RegistRenter.setVisibility(CardView.VISIBLE);
-                            RegistRenter.setVisibility(CardView.GONE);
+                            InputRenter.setVisibility(CardView.GONE);
                             AvailRenter.setVisibility(CardView.GONE);
                         }
                     });
@@ -202,11 +202,13 @@ public class AboutMe extends AppCompatActivity {
         MenuItem acc = menu.findItem(R.id.account_button);
         MenuItem box = menu.findItem(R.id.add_button);
         MenuItem search = menu.findItem(R.id.search_button);
+        MenuItem logout = menu.findItem(R.id.logout_button);
         register.setVisible(false);
         search.setVisible(false);
         refresh.setVisible(true);
         acc.setVisible(false);
         box.setVisible(false);
+        logout.setVisible(false);
         return true;
     }
 

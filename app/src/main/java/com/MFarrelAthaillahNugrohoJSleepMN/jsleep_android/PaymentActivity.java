@@ -22,7 +22,11 @@ import com.MFarrelAthaillahNugrohoJSleepMN.jsleep_android.model.*;
 import com.MFarrelAthaillahNugrohoJSleepMN.jsleep_android.request.*;
 
 
+import java.text.ParseException;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Date.*;
+import java.text.SimpleDateFormat;
 import java.util.regex.*;
 
 import retrofit2.Call;
@@ -58,9 +62,14 @@ public class PaymentActivity extends AppCompatActivity {
         book_Email.setText(MainActivity.cookies.email);
         book_roomName.setText(tempRoom.name);
         book_roomAddress.setText(tempRoom.address);
-        book_Phone.setText(MainActivity.cookies.renter.phoneNumber);
-        book_roomPrice.setText(String.valueOf(tempRoom.price.price));
+        try {
+            book_Phone.setText(MainActivity.cookies.renter.phoneNumber);
+        }
+        catch (RuntimeException f) {
+            f.printStackTrace();
+        }
 
+        book_roomPrice.setText(String.valueOf(tempRoom.price.price));
         button_book = findViewById(R.id.button_booking);
         checkIn = findViewById(R.id.date_checkIn);
         checkOut = findViewById(R.id.date_checkOut);
@@ -70,7 +79,7 @@ public class PaymentActivity extends AppCompatActivity {
         button_book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Payment payment = requestPayment(MainActivity.cookies.id, MainActivity.cookies.renter.id, tempRoom.id,
+                Payment payment = requestPayment(MainActivity.cookies.id, MainActivity.cookies.id, tempRoom.id,
                         checkIn.getText().toString(), checkOut.getText().toString());
             }
         });
@@ -117,6 +126,10 @@ public class PaymentActivity extends AppCompatActivity {
 
     protected Payment requestPayment(int buyerId, int renterId, int roomId, String fromDate, String toDate) {
 
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date chInDate = null;
+        Date chOutDate = null;
+
         System.out.println(fromDate);
         System.out.println(toDate);
 
@@ -127,22 +140,35 @@ public class PaymentActivity extends AppCompatActivity {
         boolean isMatched = matcher.matches();
         boolean isMatched2 = matcher2.matches();
 
+        try {
+            chInDate  = sdf.parse(fromDate);
+            chOutDate = sdf.parse(toDate);
+            System.out.println("Date  "+ checkOut);
+        }
+        catch (ParseException e) {
+            e.printStackTrace();
+        }
+        long diffInMilliseconds = chOutDate.getTime() - chInDate.getTime();
+        long diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
+
         if(isMatched && isMatched2) {
             mApiService.payment(buyerId, renterId, roomId, fromDate, toDate).enqueue(new Callback<Payment>() {
                 @Override
                 public void onResponse(Call<Payment> call, Response<Payment> response) {
                     if (response.isSuccessful()) {
                         Toast.makeText(mContext, "Booking Success", Toast.LENGTH_SHORT).show();
+
+                        MainActivity.cookies.balance = MainActivity.cookies.balance - (Double.parseDouble(book_roomPrice.getText().toString().replaceAll("S\\$|\\.$", "")) * (double) diffInDays);
                         Intent move = new Intent(PaymentActivity.this, MainActivity.class);
                         startActivity(move);
                     } else {
-                        Toast.makeText(mContext, "Date Unavailable, Booking Failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, "Booking Failed", Toast.LENGTH_SHORT).show();
                     }
                 }
 
                 @Override
                 public void onFailure(Call<Payment> call, Throwable t) {
-                    Toast.makeText(mContext, "Booking Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Date Unavailable, Booking Failed", Toast.LENGTH_SHORT).show();
                 }
             });
         }else {
@@ -166,12 +192,14 @@ public class PaymentActivity extends AppCompatActivity {
         MenuItem box = menu.findItem(R.id.add_button);
         MenuItem search = menu.findItem(R.id.search_button);
         MenuItem home = menu.findItem(R.id.home_button);
+        MenuItem logout = menu.findItem(R.id.logout_button);
         register.setVisible(true);
         search.setVisible(false);
         refresh.setVisible(false);
         acc.setVisible(false);
         box.setVisible(false);
         home.setVisible(true);
+        logout.setVisible(false);
         return true;
     }
 

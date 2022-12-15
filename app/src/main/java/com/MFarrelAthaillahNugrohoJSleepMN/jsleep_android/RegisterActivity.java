@@ -67,14 +67,14 @@ public class RegisterActivity extends AppCompatActivity {
                     MainActivity.cookies = response.body();
                     Intent go = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(go);
-                    Toast.makeText(mContext, "Register Successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Register successful, please log in", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
                 System.out.println(t.toString());
-                Toast.makeText(mContext, "Account Already Exist", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Account already exists / Account data cannot be empty", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -12,7 +12,8 @@
         android:id="@+id/booking_button"
         android:layout_width="161dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="@color/blue3"
         android:fontFamily="@font/montserrat_bold"
         android:text="Book Now"
@@ -31,6 +32,7 @@
         android:layout_height="147dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:clickable="false"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_facilities">
@@ -42,7 +44,7 @@
             android:layout_marginStart="50dp"
             android:backgroundTint="@color/Porsche"
             android:buttonTint="@color/lightporsche"
-            android:checked="true"
+            android:clickable="false"
             android:fontFamily="@font/montserrat"
             android:gravity="center_vertical"
             android:text="Wifi"
@@ -58,6 +60,7 @@
             android:layout_marginStart="50dp"
             android:backgroundTint="@color/Porsche"
             android:buttonTint="@color/lightporsche"
+            android:clickable="false"
             android:fontFamily="@font/montserrat"
             android:gravity="center_vertical"
             android:text="Bathtub"
@@ -73,6 +76,7 @@
             android:layout_marginStart="50dp"
             android:backgroundTint="@color/Porsche"
             android:buttonTint="@color/lightporsche"
+            android:clickable="false"
             android:fontFamily="@font/montserrat"
             android:text="Air Conditioner"
             android:textColor="@color/white"
@@ -87,6 +91,7 @@
             android:layout_marginStart="50dp"
             android:backgroundTint="@color/Porsche"
             android:buttonTint="@color/lightporsche"
+            android:clickable="false"
             android:fontFamily="@font/montserrat"
             android:text="Refrigerator"
             android:textColor="@color/white"
@@ -95,13 +100,14 @@
             android:textColorLink="@color/white" />
     </LinearLayout>
 
+
     <LinearLayout
         android:id="@+id/linearlayoutcheck2"
         android:layout_width="202dp"
         android:layout_height="145dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.817"
         app:layout_constraintStart_toEndOf="@+id/linearlayoutcheck1"
         app:layout_constraintTop_toTopOf="@+id/linearlayoutcheck1">
 
@@ -111,6 +117,7 @@
             android:layout_height="36dp"
             android:backgroundTint="@color/Porsche"
             android:buttonTint="@color/lightporsche"
+            android:clickable="false"
             android:fontFamily="@font/montserrat"
             android:text="Balcony"
             android:textColor="@color/white"
@@ -124,6 +131,7 @@
             android:layout_height="33dp"
             android:backgroundTint="@color/Porsche"
             android:buttonTint="@color/lightporsche"
+            android:clickable="false"
             android:fontFamily="@font/montserrat"
             android:text="Restaurant"
             android:textColor="@color/white"
@@ -137,6 +145,7 @@
             android:layout_height="35dp"
             android:backgroundTint="@color/Porsche"
             android:buttonTint="@color/lightporsche"
+            android:clickable="false"
             android:fontFamily="@font/montserrat"
             android:text="Fitness Center"
             android:textColor="@color/white"
@@ -150,6 +159,7 @@
             android:layout_height="35dp"
             android:backgroundTint="@color/Porsche"
             android:buttonTint="@color/lightporsche"
+            android:clickable="false"
             android:fontFamily="@font/montserrat"
             android:text="Swimming Pool"
             android:textColor="@color/white"
@@ -158,19 +168,20 @@
             android:textColorLink="@color/white" />
     </LinearLayout>
 
-
     <TextView
         android:id="@+id/detailvar_name"
-        android:layout_width="352dp"
+        android:layout_width="wrap_content"
         android:layout_height="108dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="5dp"
         android:fontFamily="@font/montserrat_bold"
-        android:gravity="left"
+        android:gravity="center_horizontal"
         android:text="Room Name"
         android:textColor="@color/Porsche"
         android:textSize="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -280,7 +291,7 @@
         android:gravity="top"
         android:text="n"
         android:textColor="@color/lightporsche"
-        android:textSize="20dp"
+        android:textSize="17dp"
         app:layout_constraintStart_toStartOf="@+id/detailvar_address"
         app:layout_constraintTop_toBottomOf="@+id/text_price" />
 
@@ -293,7 +304,7 @@
         android:gravity="top"
         android:text="USD"
         android:textColor="@color/lightporsche"
-        android:textSize="20dp"
+        android:textSize="17dp"
         app:layout_constraintEnd_toEndOf="@+id/text_price"
         app:layout_constraintStart_toEndOf="@+id/detailvar_price"
         app:layout_constraintTop_toTopOf="@+id/detailvar_price" />
