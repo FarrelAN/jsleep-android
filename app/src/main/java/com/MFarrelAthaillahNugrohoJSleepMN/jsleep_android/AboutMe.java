@@ -8,6 +8,8 @@ import android.content.Context;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import android.content.Intent;
